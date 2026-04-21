@@ -1,0 +1,51 @@
+/* eww.scss */
+
+* {
+    all: unset;
+    font-family: "Poppins", sans-serif; 
+}
+
+.main-container {
+    background-color: rgba(20, 20, 20, 0.4); 
+    border: 0px solid rgba(255, 255, 255, 0.15); 
+    border-radius: 15px; 
+    padding: 20px;
+}
+
+.toggles-box {
+    margin-bottom: 20px;
+}
+
+.toggle-btn {
+    background-color: rgba(260, 260, 260, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 15px; 
+    padding: 15px 0;
+    margin: 0 10px;
+    transition: 0.2s;
+}
+
+.toggle-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1); 
+}
+
+.slider-container {
+    margin: 10px 0;
+}
+
+.slider-icon {
+    margin-right: 15px;
+    margin-left: 10px;
+}
+
+scale trough {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    min-height: 8px;
+    min-width: 240px;
+}
+
+scale highlight {
+    background-color: #ffffff; 
+    border-radius: 10px;
+}

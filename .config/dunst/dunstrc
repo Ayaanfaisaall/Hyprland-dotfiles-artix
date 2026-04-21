@@ -1,0 +1,23 @@
+[global]
+    # Asli Jadu Yahan Hy: Min width 0, Max width 300
+    width = (0, 500)
+    height = (0, 500)
+    
+    # Position
+    origin = top-left
+    offset = (15, 15)
+ 
+    # Look & Feel
+    corner_radius = 15
+    frame_width = 0
+    padding = 15
+    horizontal_padding = 15
+    
+    # Fonts & Colors
+    font = JetBrainsMono Nerd Font 12
+    background = "#00000040" # Aapka lightly transparent noti-bg
+    foreground = "#ffffff"
+    
+    # Text Alignment
+    alignment = center
+    word_wrap = yes

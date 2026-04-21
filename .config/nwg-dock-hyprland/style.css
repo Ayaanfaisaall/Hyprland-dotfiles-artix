@@ -1,0 +1,40 @@
+window {
+    background-color: rgba(255, 255, 255, 0.02); /* Matching waybar's frosted glass */
+    border: 0px solid rgba(255, 255, 255, 0.02);
+    border-radius: 15px; /* Mac style rounded corners */
+}
+
+#box {
+    padding: 1px 1px;
+}
+
+#active {
+    /* Optional: An indicator for active window */
+    border-bottom: 0px solid #ffffff;
+}
+
+button, image {
+    background: none;
+    border-style: none;
+    box-shadow: none;
+}
+
+button {
+    padding: 6px;
+    margin: 4px;
+    border-radius: 12px;
+    transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Mac-like hover effect */
+button:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 5px; /* Slight growth */
+    margin-bottom: 5px; /* Move up slightly */
+    border-radius: 5px;
+} 
+
+button:focus {
+    box-shadow: none;
+    outline: none;
+}

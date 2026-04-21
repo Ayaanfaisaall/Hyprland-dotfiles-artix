@@ -1,0 +1,187 @@
+@import 'batteryicons.css';
+
+/* --- Global Style --- */
+* {
+    font-family: "Comic Mono";
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+}
+
+/* --- Main Window (Waybar) --- */
+window#waybar {
+    /* Light Frosted Glass Effect */
+    background: rgba(255, 255, 255, 0.01);
+    border: 0px;
+    border-radius: 15px;
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+/* --- Modules Grouping --- */
+.modules-left,
+.modules-center,
+.modules-right {
+    padding: 2px 8px;
+}
+
+/* --- Individual Module Styling --- */
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#bluetooth,
+#custom-close,
+#custom-minimize,
+#custom-maximize,
+#window {
+    padding: 0 10px;
+    margin: 4px 2px;
+    border-radius: 8px;
+    background: transparent;
+}
+
+#custom-close {
+    color: #d92d32
+}
+#custom-minimize {
+    color: #e5e208
+}
+#custom-maximize {
+    color: #37a547
+}
+
+/* --- Workspaces (Slider Effect) --- */
+#workspaces {
+    background: transparent;
+    padding: 0px 4px; 
+    margin: 2px 1px;
+    border: 0.4px solid rgba(255, 255, 255, 0.3); 
+    border-radius: 15px; 
+}
+
+/* Normal (Inactive) Workspace Buttons */
+#workspaces button {
+    padding: 0 2px; 
+    padding-top: 4px;
+    margin: 0px 0px; 
+    color: rgba(255, 255, 255, 0.5); 
+    background: transparent;
+    border-radius: 15px; 
+    min-width: 20px;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
+}
+
+/* Hover Effect */
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.1); 
+    color: #ffffff;
+    box-shadow: none;
+}
+
+/* Active (Current) Workspace Slider */
+#workspaces button.active {
+    background: rgba(255, 255, 255, 0.15); 
+    color: #ffffff; 
+    min-width: 40px; 
+    border-radius: 15px;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.68);
+}
+
+
+/* --- Specific Enhancements --- */
+
+/* Clock - Center focus */
+#clock {
+    color: #ffffff;
+    font-weight: 800;
+    padding-top: 5px;
+}
+
+/* Window Title */
+#window {
+    color: rgba(255, 255, 255, 0.8);
+    font-style: normal;
+    padding-top: 4px;
+}
+
+/* Left Buttons */
+#custom-close,
+#custom-minimize,
+#custom-maximize {
+    font-size: 12px;
+    padding: 0 5px;
+}
+
+#custom-close {
+	padding-left: 15px;
+}
+
+/* --- Animations --- */
+@keyframes blink {
+    to {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #f53c3c;
+    }
+}
+
+/* --- SVG Based Modules --- */
+#custom-sysinfo {
+    padding-top: 5px;
+    padding-right: 10px;
+}
+
+#network {
+    background-image: url("/home/ayaan/.config/waybar/icons/wifi.svg");
+    background-size: 14px;
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    padding-right: 6px;
+}
+
+#bluetooth {
+    background-image: none;
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+}
+
+#bluetooth.connected {
+    background-image: url("/home/ayaan/.config/waybar/icons/bluetooth.svg");
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    padding-right: 6px;
+    padding-left: 1px;
+    margin: 0px;
+    min-width: 16px;
+}
+
+#pulseaudio {
+    background-image: url("/home/ayaan/.config/waybar/icons/audio.svg");
+    background-size: 25px;
+    padding-right: 0px;
+    margin-right: 0px;
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    min-width: 25px;
+}
+
+#pulseaudio.muted {
+    background-image: none;
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+}
+
+#battery {
+    background-size: 28px;
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    padding-left: 0px;
+    margin-left: 0px;
+    min-width: 28px;
+}
+

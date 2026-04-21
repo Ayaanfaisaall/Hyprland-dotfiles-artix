@@ -1,0 +1,36 @@
+;; eww.yuck
+
+(defwindow control_center
+    :monitor 0
+    :geometry (geometry :x "15px" :y "15px" :width "350px" :height "200px" :anchor "top right")
+    :stacking "fg"
+    :exclusive false
+    :namespace "eww-blur"
+    (main_layout))
+
+(defwidget main_layout []
+    (box :orientation "v" :space-evenly false :class "main-container"
+
+;; Wi-Fi and Bluetooth Buttons
+        (box :orientation "h" :space-evenly true :class "toggles-box"
+            (button :class "toggle-btn wifi" :onclick "~/.config/eww/scripts/wifi.sh &"
+                (image :path "assets/wifi.svg" :image-width 28 :image-height 28))
+            (button :class "toggle-btn bluetooth" :onclick "~/.config/eww/scripts/bluetooth.sh &"
+                (image :path "assets/bluetooth.svg" :image-width 28 :image-height 28)))
+
+        ;; Brightness Slider
+        (box :orientation "h" :space-evenly false :class "slider-container"
+            (box :class "slider-icon"
+                (image :path "assets/brightness.svg" :image-width 20 :image-height 20))
+            (scale :class "b-slider" :min 10 :max 101 :value current_brightness :onchange "sh -c 'brightnessctl s {}% && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i display-brightness \"Brightness: {}%\"'"))
+
+        ;; Volume Slider (PulseAudio)
+        (box :orientation "h" :space-evenly false :class "slider-container"
+            (box :class "slider-icon"
+                (image :path "assets/volume.svg" :image-width 20 :image-height 20))
+            (scale :class "v-slider" :min 0 :max 101 :value current_volume :onchange "sh -c 'pactl set-sink-volume @DEFAULT_SINK@ {}% && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i audio-volume-high \"Volume: {}%\"'"))))
+
+;; Variables to poll system stats
+;; Uses grep to extract just the percentage number from pactl output
+(defpoll current_volume :interval "1s" "pactl get-sink-volume @DEFAULT_SINK@ | grep -oP '\\d+(?=%)' | head -1")
+(defpoll current_brightness :interval "1s" "brightnessctl -m | awk -F, '{print substr($4, 1, length($4)-1)}'")

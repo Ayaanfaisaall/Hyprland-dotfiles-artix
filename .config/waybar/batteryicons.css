@@ -1,0 +1,70 @@
+#battery.bat-100 {
+    background-image: url("/home/ayaan/.config/waybar/icons/battery100.svg");
+}
+
+#battery.bat-100.charging {
+    background-image: url("/home/ayaan/.config/waybar/icons/battery100c.svg");
+}
+#battery.bat-90 {
+    background-image: url("/home/ayaan/.config/waybar/icons/battery90.svg");
+}
+
+#battery.bat-90.charging {
+    background-image: url("/home/ayaan/.config/waybar/icons/battery90c.svg");
+}
+#battery.bat-80 {
+    background-image: url("/home/ayaan/.config/waybar/icons/battery80.svg");
+}
+
+#battery.bat-80.charging {
+    background-image: url("/home/ayaan/.config/waybar/icons/battery80c.svg");
+}
+#battery.bat-70 {
+    background-image: url("/home/ayaan/.config/waybar/icons/battery70.svg");
+}
+
+#battery.bat-70.charging {
+    background-image: url("/home/ayaan/.config/waybar/icons/battery70c.svg");
+}
+#battery.bat-60 {
+    background-image: url("/home/ayaan/.config/waybar/icons/battery60.svg");
+}
+
+#battery.bat-60.charging {
+    background-image: url("/home/ayaan/.config/waybar/icons/battery60c.svg");
+}
+#battery.bat-50 {
+    background-image: url("/home/ayaan/.config/waybar/icons/battery50.svg");
+}
+
+#battery.bat-50.charging {
+    background-image: url("/home/ayaan/.config/waybar/icons/battery50c.svg");
+}
+#battery.bat-40 {
+    background-image: url("/home/ayaan/.config/waybar/icons/battery40.svg");
+}
+
+#battery.bat-40.charging {
+    background-image: url("/home/ayaan/.config/waybar/icons/battery40c.svg");
+}
+#battery.bat-30 {
+    background-image: url("/home/ayaan/.config/waybar/icons/battery30.svg");
+}
+
+#battery.bat-30.charging {
+    background-image: url("/home/ayaan/.config/waybar/icons/battery30c.svg");
+}
+#battery.bat-20 {
+    background-image: url("/home/ayaan/.config/waybar/icons/battery20.svg");
+}
+
+#battery.bat-20.charging {
+    background-image: url("/home/ayaan/.config/waybar/icons/battery20c.svg");
+}
+#battery.bat-10 {
+    background-image: url("/home/ayaan/.config/waybar/icons/battery10.svg");
+}
+
+#battery.bat-10.charging {
+    background-image: url("/home/ayaan/.config/waybar/icons/battery10c.svg");
+}

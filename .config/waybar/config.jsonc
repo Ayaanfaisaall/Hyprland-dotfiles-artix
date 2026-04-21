@@ -1,0 +1,161 @@
+{
+// --- General Settings ---
+"position": "top",
+"layer": "top",
+"height": 34,
+"margin-top": 8,
+"margin-bottom": 1,
+"margin-left": 10,
+"margin-right": 10,
+
+
+// --- Module Layout ---
+"modules-left": [
+    "image#logo",
+    "custom/close",
+    "custom/minimize",
+    "custom/maximize",
+    "hyprland/window",
+    "hyprland/workspaces"
+],
+
+"modules-center": [
+    "clock"
+],
+
+"modules-right": [
+    "custom/sysinfo",
+    "network",
+    "bluetooth",
+    "pulseaudio",
+    "battery"
+],
+
+
+// --- Modules Left (Window Controls) ---
+"image#logo":{
+    "path":"/home/ayaan/.config/waybar/logo/zaailW.svg",
+    "size":24,
+    "margin-right":10
+},
+
+"custom/close": {
+    "format": "",
+    "on-click": "hyprctl dispatch killactive",
+    "tooltip": true,
+    "tooltip-format": "Close Window"
+},
+
+"custom/minimize": {
+    "format": "",
+    "on-click": "hyprctl dispatch movetoworkspacesilent special",
+    "on-click-right": "hyprctl dispatch togglespecialworkspace && hyprctl dispatch movetoworkspace e+0",
+    "tooltip": true,
+    "tooltip-format": "Minimize"
+},
+
+"custom/maximize": {
+    "format": "",
+    "on-click": "hyprctl dispatch fullscreen 1",
+    "tooltip": true,
+    "tooltip-format": "Maximize"
+},
+
+"hyprland/window": {
+    "format": "{class}",
+    "max-length": 30,
+    "separate-outputs": true,
+    "rewrite": {
+        "": "Desktop",
+        "alacritty": "Terminal",
+        "kitty": "Terminal",
+        "brave-.*.desktop": "Web App",
+        "google-chrome": "Google Chrome"
+    }
+},
+
+"hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "all-outputs": true,
+    "format-icons": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9",
+        "10": "10"
+    },
+    "persistent-workspaces": {
+        "*": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+    }
+},
+
+
+// --- Modules Center ---
+"clock": {
+    "format": "{:%I:%M %p}",
+    "tooltip": true,
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%d/%m/%Y}"
+},
+
+
+// --- Modules Right ---
+"custom/sysinfo": {
+    "exec": "/home/ayaan/.config/waybar/scripts/sysinfo.sh",
+    "interval": 2,
+    "format": "{}",
+    "on-click": "hyprctl dispatch exec gnome-system-monitor"
+},
+
+"network": {
+    "format": " ",
+    "format-wifi": " ",
+    "format-disconnected": "",
+    "tooltip-format": "{essid}",
+    "on-click": "eww open --toggle control_center"
+},
+
+"bluetooth": {
+    "format": "",
+    "format-disabled": "",
+    "format-connected": " ", "tooltip-format": "{controller_alias}\n{num_connections} connected",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "on-click": "eww open --toggle control_center"
+},
+
+"pulseaudio": {
+    "format": " ",
+    "format-muted": "",
+    "format-bluetooth": "",
+    "format-icons": {
+        "headphone": " "
+    },
+    "on-click": "eww open --toggle control_center"
+},
+
+"battery": {
+    "states": {
+        "bat-10": 10,
+        "bat-20": 20,
+        "bat-30": 30,
+        "bat-40": 40,
+        "bat-50": 50,
+        "bat-60": 60,
+        "bat-70": 70,
+        "bat-80": 80,
+        "bat-90": 90,
+        "bat-100": 100
+    },
+    "interval": 2,
+    "format": " ",
+    "tooltip-format": "{capacity}%",
+    "on-click": "eww open --toggle control_center"
+}
+}
