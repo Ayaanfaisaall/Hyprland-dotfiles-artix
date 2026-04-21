@@ -11,14 +11,14 @@ state_file="/tmp/opaque_$address"
 
 if [ -f "$state_file" ]; then
     rm "$state_file"
-    hyprctl setprop active opaque 0
+    hyprctl keyword decoration:active_opacity 0.9
     if [ $class == "kitty" ]; then
 	sed -i "s|0.8|1.0|g" ~/.config/kitty/kitty.conf
         killall -USR1 kitty
     fi
 else
     touch "$state_file"
-    hyprctl setprop active opaque 1
+    hyprctl keyword decoration:active_opacity 1.0
     if [ $class == "kitty" ]; then
 	sed -i "s|1.0|0.8|g" ~/.config/kitty/kitty.conf
         killall -USR1 kitty
