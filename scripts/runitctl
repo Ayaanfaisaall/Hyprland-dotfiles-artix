@@ -1,0 +1,15 @@
+#!/bin/bash
+
+opt=$1
+ser=$2
+
+if [[ $opt == "enable" ]]; then
+	sudo ln -s /etc/runit/sv/"$ser" /run/runit/service
+elif [[ $opt == "disable" ]]; then
+	sudo sv stop "$ser"
+	sudo rm /run/runit/service/"$ser"
+else
+	echo "Enter Valid Option: enable, disable"
+	echo "Or use like sudo sv <OPTION> <SERVICE>"
+fi
+

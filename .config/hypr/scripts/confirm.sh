@@ -5,7 +5,7 @@ action=$1
 
 if [ "$action" == "exit" ]; then
     prompt="Logout of Hyprland?"
-    command="hyprctl dispatch exit"
+    command="killall xdg-desktop-portal-termfilechooser xdg-desktop-portal-wlr xdg-desktop-portal; hyprctl dispatch exit"
 elif [ "$action" == "poweroff" ]; then
     prompt="Poweroff PC?"
     command="loginctl poweroff"

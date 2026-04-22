@@ -61,8 +61,9 @@ alias vbshrc='vim ~/.bashrc'
 alias rfsh="clear && fastfetch"
 alias icat='kitty +kitten icat'
 alias lsimg='timg --grid=7 --title="%b" *.jpg *.png 2> /dev/null'
-alias reboot='loginctl reboot'
-alias poweroff='loginctl poweroff'
+alias wlcp='wl-copy'
+#alias reboot='loginctl reboot'
+#alias poweroff='loginctl poweroff'
 
 # Dotfiles & Config Navigation 
 alias dots='cd ~/dotfiles'
@@ -81,7 +82,6 @@ alias confk='cd ~/dotfiles/.config/kitty'
 alias rwybr='pkill waybar &> /dev/null; (waybar &> /dev/null &)'
 alias rdock='killall nwg-dock-hyprland &> /dev/null; (nwg-dock-hyprland -d -i 30 -hd 0 &> /dev/null &)'
 alias rhppr='pkill hyprpaper; hyprpaper &> /dev/null &'
-alias theme='~/dotfiles/scripts/theme.sh'
 
 # Git Workflow 
 alias ga='git add .'
@@ -90,7 +90,7 @@ alias gpsh='git push origin main'
 
 # Applications & Bioinformatics
 alias adt="$HOME/Downloads/mgltools_x86_64Linux2_1.5.7/bin/adt"
-alias whatsapp="gtk-launch brave-hnpfjngllnobngcgfapefoaidbinmjnm-Profile_1.desktop"
-alias gemini="gtk-launch brave-gdfaincndogidkdcdkhapmbffkckdkhn-Profile_1.desktop"
+alias whatsapp="gtk-launch brave-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop"
+alias gemini="gtk-launch brave-gdfaincndogidkdcdkhapmbffkckdkhn-Default.desktop"
 alias claude="gtk-launch brave-fmpnliohjhemenmnlpbfagaolkdacoja-Profile_1.desktop"
 

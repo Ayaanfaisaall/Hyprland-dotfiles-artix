@@ -1,6 +1,6 @@
 # Frosted Glass Hyprland Dots
 
-A minimalist, modern, and "frosted glass" inspired dotfiles configuration for Hyprland, tailored for Fedora Linux. 
+A minimalist, modern, and "frosted glass" inspired dotfiles configuration for Hyprland, tailored for Artix Linux. 
 
 This repository contains the configuration files required to replicate a clean, dark-themed desktop environment with square borders, unified blur effects, and a highly modular architecture.
 
@@ -114,8 +114,8 @@ Hyprland-dotfiles/
 Use the install.sh script:
 
 ```Bash
-git clone https://github.com/Ayaanfaisaall/Hyprland-dotfiles.git
-cd Hyprland-dotfiles
+git clone https://github.com/Ayaanfaisaall/Hyprland-dotfiles-artix.git
+cd Hyprland-dotfiles-artix
 chmod +x install.sh
 ./install.sh
 ```
