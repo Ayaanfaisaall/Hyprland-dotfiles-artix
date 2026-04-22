@@ -93,7 +93,7 @@ Hyprland-dotfiles-artix/
 ├── screenshots/
 ├── scripts/
 │   └── theme.sh
-├── dependencies.txt
+├── dependencies.sh
 ├── install.sh
 ├── LICENSE
 └── README.md
