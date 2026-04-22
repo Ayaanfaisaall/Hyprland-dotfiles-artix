@@ -110,7 +110,7 @@
     "exec": "/home/ayaan/.config/waybar/scripts/sysinfo.sh",
     "interval": 2,
     "format": "{}",
-    "on-click": "hyprctl dispatch exec gnome-system-monitor"
+    "on-click": "hyprctl dispatch exec kitty htop"
 },
 
 "network": {
@@ -133,7 +133,7 @@
 "pulseaudio": {
     "format": " ",
     "format-muted": "",
-    "format-bluetooth": "",
+    "format-bluetooth": " ",
     "format-icons": {
         "headphone": " "
     },
