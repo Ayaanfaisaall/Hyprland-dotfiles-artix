@@ -1,1 +1,0 @@
-hyprland waybar rofi-wayland dunst nwg-dock-hyprland hyprpaper pavucontrol playerctl eww pamixer brightnessctl network-manager-applet bluez-tools stow cliphist wl-clipboard libnotify grim slurp alacritty foot kitty timg ranger fastfetch  
