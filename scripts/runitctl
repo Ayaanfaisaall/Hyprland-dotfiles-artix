@@ -3,13 +3,101 @@
 opt=$1
 ser=$2
 
-if [[ $opt == "enable" ]]; then
-	sudo ln -s /etc/runit/sv/"$ser" /run/runit/service
-elif [[ $opt == "disable" ]]; then
-	sudo sv stop "$ser"
-	sudo rm /run/runit/service/"$ser"
-else
-	echo "Enter Valid Option: enable, disable"
-	echo "Or use like sudo sv <OPTION> <SERVICE>"
+usage(){
+	echo "usage: runitctl <OPTION> <SERVICE>"
+	echo "or use: runitctl --help to show all the options"
+}
+helpfn(){
+	echo "runitctl written as a wrapper to runit service manager"
+	echo "usage: runitctl <OPTION> <SERVICE>"
+	echo ""
+	echo "options:"
+	echo "--help or -h	Show this help menu."
+	echo "enable		Enable and start a service."
+	echo "disable 	Disable a service."
+	echo "start		Start a service."
+	echo "stop		Stop a service."
+	echo "status		Check the status of service."
+	echo ""
+	echo "examples:"
+	echo "runitctl enable sshd"
+	echo "runitctl status NetworkManager" 
+}
+chkser(){
+	if [[ -z "$ser" ]]; then
+		echo "runitctl: error: no service was mentioned."
+		usage
+		exit 1
+	fi
+
+	serd="/etc/runit/sv/${ser}"
+	sere="/run/runit/service/${ser}"
+}
+
+if [[ $# -eq 0 ]]; then
+	usage
+	exit 1
 fi
 
+case "$opt" in
+	-h|--help)
+		helpfn
+		exit 0
+	;;
+	enable)
+		chkser
+		if [[ -d "$serd" ]]; then
+			if [[ ! -L "$sere" ]]; then
+				sudo ln -s "$serd" /run/runit/service/
+				echo "runitctl: service: ${ser} enabled"
+				exit 0
+			else
+				echo "runitctl: error: service: ${ser} already enabled"
+			fi
+		else
+			echo "runitctl: error: service: ${ser} does not exist"
+			exit 1
+		fi
+	;;
+	disable)
+		chkser
+		if [[ -L "$sere" ]]; then
+			sudo sv stop "$ser"
+			sudo rm "$sere" 	
+			echo "runitctl: service: ${ser} disabled"
+		else
+			echo "runitctl: error: service: ${ser} already disabled"
+			exit 1
+		fi
+	;;
+	start)
+		chkser
+		if [[ -d "$serd" ]]; then
+			output=$(sudo sv start "${ser}" 2>&1)
+			echo "runitctl:	${output}"
+		else
+			echo "runitctl: error: service: ${ser} does not exist"	
+			exit 1
+		fi
+	;;
+	stop)
+		chkser
+		if [[ -d "$serd" ]]; then
+			output=$(sudo sv stop "${ser}" 2>&1)
+			echo "runitctl:	${output}"
+		else
+			echo "runitctl: error: service: ${ser} does not exist"	
+			exit 1
+		fi
+	;;
+	status)
+		chkser
+		output=$(sudo sv status "${ser}" 2>&1)	
+		echo "runitctl: ${output}"
+	;;
+	*)
+		echo "runitctl: error: no option mentioned"
+		helpfn
+		exit 1
+	;;
+esac

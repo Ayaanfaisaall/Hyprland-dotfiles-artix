@@ -58,7 +58,8 @@ unset __conda_setup
 alias sbshrc='source ~/.bashrc'
 alias inbshrc='tee -a ~/.bashrc'
 alias vbshrc='vim ~/.bashrc'
-alias rfsh="clear && fastfetch"
+alias rfsh="clear && printf '\e[3J' && fastfetch"
+alias clear="clear && printf '\e[3J'"
 alias icat='kitty +kitten icat'
 alias lsimg='timg --grid=7 --title="%b" *.jpg *.png 2> /dev/null'
 alias wlcp='wl-copy'

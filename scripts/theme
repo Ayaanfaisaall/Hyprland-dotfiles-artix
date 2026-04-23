@@ -1,16 +1,32 @@
 #!/bin/bash
 
-if [[ "$1" == "-ls" ]]; then
-        timg --grid=7 --title="%b" "$HOME/dotfiles/.config/hypr/wallpapers/"* 2> /dev/null
-	echo " "
+case "$1" in
+    --help|-h)
+        echo "theme is written to change system wide theme for" 
+        echo "Hyprland-dotfiles-artix by Ayaanfaisaall"
+        echo "usage: theme <int>"
+        echo ""
+        echo "options:"
+        echo "  --help      to show this help menu"
+        echo "  --ls        to show list of themes"
+        echo "examples:"
+        echo "  theme 16"
+        echo "  theme --ls"
         exit 0
-fi
-
-if [[ -z "$1" ]] || [[ ! "$1" =~ ^[0-9]+$ ]]; then
-        echo "Use like: ./theme.sh <parameter(int)>"
-        echo "OR: ./theme.sh -ls (to view)"
-        exit 1
-fi
+        ;;
+    --ls)
+        timg --grid=7 --title="%b" "$HOME/dotfiles/.config/hypr/wallpapers/"* 2> /dev/null
+        echo " "
+        exit 0
+        ;;
+    *)
+        if [[ -z "$1" ]] || [[ ! "$1" =~ ^[0-9]+$ ]]; then
+            echo "usage: theme <int>"
+            echo "or: theme --help to view options"
+            exit 1
+        fi
+        ;;
+esac
 
 no=$1
 
@@ -23,12 +39,13 @@ sed -i "s/[0-9]\+\.jpg/$no.jpg/g" "$hyprppr"
 sed -i "s/[0-9]\+\.jpg/$no.jpg/g" "$hyprlck"
 sed -i "s/[0-9]\+\.jpg/$no.jpg/g" "$sddm"
 
-if [ $no -eq 14 ]; then
-        sed -i "s/zaailW.svg/zaail.svg/g" "$wybr"
+if [ "$no" -eq 14 ]; then
+    sed -i "s/zaailW\.svg/zaail.svg/g" "$wybr"
 else
-        sed -i "s/zaail.svg/zaailW.svg/g" "$wybr" &> /dev/null
+    sed -i "s/zaail\.svg/zaailW.svg/g" "$wybr" &> /dev/null
 fi
-
 
 pkill waybar; waybar &> /dev/null &
 pkill hyprpaper; hyprpaper &> /dev/null &
+
+echo "theme: $no applied successfully"
