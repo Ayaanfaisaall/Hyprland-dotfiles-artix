@@ -17,6 +17,7 @@ helpfn(){
 	echo "disable 	Disable a service."
 	echo "start		Start a service."
 	echo "stop		Stop a service."
+	echo "restart	Restart a service."
 	echo "status		Check the status of service."
 	echo ""
 	echo "examples:"
@@ -84,6 +85,16 @@ case "$opt" in
 		chkser
 		if [[ -d "$serd" ]]; then
 			output=$(sudo sv stop "${ser}" 2>&1)
+			echo "runitctl:	${output}"
+		else
+			echo "runitctl: error: service: ${ser} does not exist"	
+			exit 1
+		fi
+	;;
+	restart)
+		chkser
+		if [[ -d "$serd" ]]; then
+			output=$(sudo sv restart "${ser}" 2>&1)
 			echo "runitctl:	${output}"
 		else
 			echo "runitctl: error: service: ${ser} does not exist"	

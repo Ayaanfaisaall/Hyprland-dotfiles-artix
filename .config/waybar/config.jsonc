@@ -115,6 +115,7 @@
 
 "network": {
     "format": " ",
+    "format-connected": " ",
     "format-wifi": " ",
     "format-disconnected": "",
     "tooltip-format": "{essid}",
