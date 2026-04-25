@@ -71,8 +71,7 @@ Hyprland-dotfiles-artix/
 │   │   ├── monitor.conf
 │   │   ├── permissions.conf
 │   │   ├── programs.conf
-│   │   ├── window.conf
-│   │   └── winrulev2.conf
+│   │   └── winrules.conf
 │   ├── keyd/
 │   │   └── default.conf
 │   ├── kitty/
@@ -83,6 +82,11 @@ Hyprland-dotfiles-artix/
 │   │   └── themes/
 │   ├── rofi/
 │   │   └── config.rasi
+│   ├── xdp/
+│   │   └── portals.conf
+│   ├── xdp/
+│   │   ├── config
+│   │   └── yazi.sh
 │   └── waybar/
 │       ├── icons/
 │       ├── logo/
