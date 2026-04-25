@@ -44,68 +44,26 @@ Hyprland-dotfiles-artix/
 │
 ├── .config/
 │   ├── alacritty/
-│   │   └── alacritty.toml
 │   ├── dunst/
-│   │   └── dunstrc
 │   ├── fastfetch/
-│   │   ├── logo/
-│   │   └── config.jsonc
 │   ├── eww/
-│   │   ├── assets/
-│   │   ├── scripts/
-│   │   ├── eww.scss
-│   │   └── eww.yuck
 │   ├── foot/
-│   │   └── foot.ini
 │   ├── hypr/
-│   │   ├── scripts/
-│   │   ├── wallpapers/
-│   │   ├── autostart.conf
-│   │   ├── bindings.conf
-│   │   ├── env.conf
-│   │   ├── hyprland.conf
-│   │   ├── hyprpaper.conf
-│   │   ├── hyprlock.conf
-│   │   ├── input.conf
-│   │   ├── lookandfeel.conf
-│   │   ├── monitor.conf
-│   │   ├── permissions.conf
-│   │   ├── programs.conf
-│   │   └── winrules.conf
-│   ├── keyd/
-│   │   └── default.conf
 │   ├── kitty/
-│   │   └── kitty.conf
 │   ├── nwg-dock-hyprland/
-│   │   └── style.css
-│   ├── plymouth/
-│   │   └── themes/
 │   ├── gtk-4.0/
-│   │   ├── assets/
-│   │   ├── gtk-dark.css
-│   │   ├── gtk.css
-│   │   └── settings.ini
 │   ├── gtk-3.0/
-│   │   └── settings.ini
 │   ├── rofi/
-│   │   └── config.rasi
 │   ├── xdp/
-│   │   └── portals.conf
 │   ├── xdp-tfc/
-│   │   ├── config
-│   │   └── yazi.sh
 │   └── waybar/
-│       ├── icons/
-│       ├── logo/
-│       ├── config.jsonc
-│       └── style.css
 │
 ├── .rc/
 ├── screenshots/
 ├── scripts/
-│   └── theme.sh
 ├── dependencies.sh
 ├── install.sh
+├── others/
 ├── LICENSE
 └── README.md
 ```
