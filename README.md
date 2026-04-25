@@ -80,11 +80,18 @@ Hyprland-dotfiles-artix/
 │   │   └── style.css
 │   ├── plymouth/
 │   │   └── themes/
+│   ├── gtk-4.0/
+│   │   ├── assets/
+│   │   ├── gtk-dark.css
+│   │   ├── gtk.css
+│   │   └── settings.ini
+│   ├── gtk-3.0/
+│   │   └── settings.ini
 │   ├── rofi/
 │   │   └── config.rasi
 │   ├── xdp/
 │   │   └── portals.conf
-│   ├── xdp/
+│   ├── xdp-tfc/
 │   │   ├── config
 │   │   └── yazi.sh
 │   └── waybar/
