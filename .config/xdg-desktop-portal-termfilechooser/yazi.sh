@@ -9,24 +9,27 @@ path="$4"
 out="$5"
 
 if [ "$save" = "1" ]; then
-    # 1. Basename nikal lo
     bsflnm=$(basename "$path")
-    dl_dir="$HOME/Downloads"
+    dldir="$HOME/Downloads"
+    dummyfile="$dldir/$bsflnm"
+    fileex=0
+
+    # Create dummy file if it doesn't exist
+    if [[ ! -f "$dummyfile" ]]; then
+        touch "$dummyfile"
+        fileex=1  
+    fi 
+
+    kitty --class yazi-filechooser -e yazi --chooser-file="$out" "$dummyfile"
     
-    # 2. Bash ko use kr ky Downloads mai nai file bna lo
-    dummy_file="$dl_dir/$bsflnm"
-    touch "$dummy_file"
-    
-    # 3. Yazi mai wahi nai file direct open krlo
-    kitty --class yazi-filechooser -e yazi --chooser-file="$out" "$dummy_file"
-    
-    # Safai: Agar tumne download cancel kr dia ya koi aur folder choose kia, 
-    # to jo dummy file bash ne banayi thi usay chup chap delete kr do takay kachra jama na ho.
-    if [ ! -s "$out" ] || [ "$(cat "$out")" != "$dummy_file" ]; then
-         rm -f "$dummy_file"
+    # Cleanup logic
+    if [[ $fileex -eq 1 ]]; then 
+        # FIXED: Replaced $dummy_file with $dummyfile
+        if [ ! -s "$out" ] || [ "$(cat "$out")" != "$dummyfile" ]; then
+             rm -f "$dummyfile"
+        fi
     fi
 
 else
-    # 4. Normal file selector mode (Uploads/Folders ky liye)
     kitty --class yazi-filechooser -e yazi --chooser-file="$out" "$path"
 fi
