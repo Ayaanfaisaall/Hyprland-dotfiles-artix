@@ -62,7 +62,7 @@ Hyprland-dotfiles-artix/
 ├── screenshots/
 ├── scripts/
 ├── dependencies.sh
-├── install.sh
+├── installation.md
 ├── others/
 ├── LICENSE
 └── README.md
@@ -79,15 +79,8 @@ Hyprland-dotfiles-artix/
 
 ---
 
-## Installation
-Use the install.sh script:
-
-```Bash
-git clone https://github.com/Ayaanfaisaall/Hyprland-dotfiles-artix.git
-cd Hyprland-dotfiles-artix
-chmod +x install.sh
-./install.sh
-```
+## Installation Guide
+For installation refer to [installation.md](installation.md)
 
 ---
 
@@ -181,6 +174,7 @@ To keep the configuration clean and modular, complex window management and custo
 - Hyprland developers
 - eww by elkowar
 - waybar community
+- silent sddm theme
 
 ---
 

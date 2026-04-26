@@ -3,13 +3,21 @@
 # Hyprland & Wayland Ecosystem Packages 
 
 pacmanpkgs=(
+    # Core dependencies
+    "seatd"
+    "seatd-runit"
+    "dbus"
+    "dbus-runit"
+
     # Core Wayland & Compositor
     "hyprland"
-    "seatd-runit"               # Crucial for Wayland session management on Artix
-    
-    # Hyprland Ecosystem
     "hyprlock"                  # Screen locker
     "hyprpaper"                 # Wallpaper daemon
+    "sddm"
+    "plymouth"
+    "qt5-wayland"               # Qt5 Wayland support
+    "qt6-wayland"               # Qt6 Wayland support
+    "polkit-kde-agent"          # Authentication agent
     
     # Portals (Crucial for screen sharing & file picking)
     "xdg-desktop-portal-hyprland"
@@ -21,6 +29,12 @@ pacmanpkgs=(
     "wireplumber"
     "pipewire-alsa"
     "pipewire-pulse"
+    "qt5-multimedia"            # Qt5 multimedia support
+    "qt6-multimedia"            # Qt6 multimedia support
+    "gst-plugins-good"          # GStreamer plugins
+    "gst-plugins-bad"           # GStreamer plugins
+    "gst-plugins-ugly"          # GStreamer plugins
+    "gst-libav"                 # GStreamer libav integration
     
     # Utilities & Keybind Dependencies
     "wl-clipboard"              # Wayland clipboard
@@ -32,6 +46,8 @@ pacmanpkgs=(
     "pamixer"                   # CLI Audio control
     "playerctl"                 # CLI Media control
     "brightnessctl"             # CLI Backlight control
+    "qt5-virtualkeyboard"       # Virtual keyboard (Qt5)
+    "qt6-virtualkeyboard"       # Virtual keyboard (Qt6)
     
     # UI, App Launchers & Theming
     "rofi-wayland"              # App launcher
@@ -40,6 +56,10 @@ pacmanpkgs=(
     "nwg-look"                  # GTK theme settings for Wayland
     "qt5ct"                     # Qt5 theme settings
     "qt6ct"                     # Qt6 theme settings
+    "kvantum"                   # SVG-based theme engine for Qt
+    "qt5-graphicaleffects"      # Qt5 graphical effects (often needed for SDDM themes)
+    "qt5-quickcontrols2"        # Qt5 UI controls (often needed for SDDM themes)
+    "qt5-svg"                   # Qt5 SVG rendering
     "ttf-jetbrains-mono-nerd"   # Nerd font for Waybar/Eww icons
     
     # Scripting dependencies (For Waybar/Eww/Hyprland IPC)
@@ -53,6 +73,7 @@ yaypkgs=(
     "eww"                                      # Advanced widget system
     "xdg-desktop-portal-termfilechooser-git"   # Terminal based file chooser portal
     "nwg-drawer"
+    "graphite-gtk-theme"
     "bluez-tools"
     "timg" 
 )
@@ -85,4 +106,3 @@ echo "[*] Installing custom AUR Hyprland packages via yay..."
 yay -S --needed "${yaypkgs[@]}"
 
 echo "[+] Hyprland dependencies installation complete!"
-
