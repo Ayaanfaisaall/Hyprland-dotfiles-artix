@@ -78,4 +78,4 @@ fc-cache-fv
 
 For the cursor the hyprland.conf is already configured.
 
--
+---
