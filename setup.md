@@ -2,7 +2,7 @@
 If you want to apply plymouth theme put it in the right directory:
 
 ```bash
-sudo cp -r others/plymouth/themes/zaailtheme
+sudo cp -r others/plymouth/themes/zaailtheme /usr/share/plymouth/themes
 sudo plymouthd-set-default-theme -R zaailtheme
 sudo vim /etc/mkinitcpio.conf			# add plymouth to hooks
 sudo mkinitcpio -P				# rebuild initramfs
@@ -58,7 +58,7 @@ The hyprland lauches by start-hyprland by default, in order for whole environmen
 sudo vim /usr/share/wayland-session/hyprland.desktop
 ```
 
-Replace **start-hyprland** with **dbus-run-session /usr/bin/start-hyprland.
+Replace **start-hyprland** with **dbus-run-session /usr/bin/start-hyprland**.
 
 ---
 

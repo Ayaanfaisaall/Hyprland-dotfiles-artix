@@ -87,6 +87,6 @@ After installation:
 ---
 
 ### Note
-For sddm installation refer to [setup.md](setup.md)
+For sddm, fonts, cursor installation refer to [setup.md](setup.md)
 
 ---
