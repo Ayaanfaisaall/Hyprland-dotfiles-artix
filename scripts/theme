@@ -7,14 +7,14 @@ case "$1" in
         echo "usage: theme <int>"
         echo ""
         echo "options:"
-        echo "  --help      to show this help menu"
-        echo "  --ls        to show list of themes"
+        echo "  --help, -h		to show this help menu"
+        echo "  --list, -ls		to show list of themes"
         echo "examples:"
         echo "  theme 16"
         echo "  theme --ls"
         exit 0
         ;;
-    --ls)
+    -ls|--list)
         timg --grid=7 --title="%b" "$HOME/dotfiles/.config/hypr/wallpapers/"* 2> /dev/null
         echo " "
         exit 0

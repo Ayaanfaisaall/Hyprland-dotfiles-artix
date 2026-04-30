@@ -17,7 +17,7 @@ helpfn(){
 	echo "disable 	Disable a service."
 	echo "start		Start a service."
 	echo "stop		Stop a service."
-	echo "restart	Restart a service."
+	echo "restart		Restart a service."
 	echo "status		Check the status of service."
 	echo ""
 	echo "examples:"
