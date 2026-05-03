@@ -8,6 +8,7 @@ syntax on
 nnoremap fs gg
 nnoremap fe G
 nnoremap end $
+nnoremap dt dd
 nnoremap dne 0
 nnoremap dnw ^
 
@@ -15,6 +16,7 @@ nnoremap dnw ^
 onoremap fs gg
 onoremap fe G
 onoremap end $
+onoremap dtt dd
 onoremap dne 0
 onoremap dnw ^
 
@@ -23,6 +25,7 @@ nnoremap cp "+y
 vnoremap cp "+y
 
 nnoremap cpa gg"+yG
+nnoremap dta ggdG
 
 nnoremap cmt I# <Esc>
 nnoremap cmr ^xx
