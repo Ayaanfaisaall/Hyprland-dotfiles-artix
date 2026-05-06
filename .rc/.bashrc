@@ -36,6 +36,9 @@ export HISTSIZE=1000000
 export HISTFILESIZE=1000000
 shopt -s histappend
 
+# Themes
+export GTK_THEME="Graphite-blue-Dark:dark"
+
 # SHELL SETTINGS & PROMPT
 set -o vi  # Vim keybindings in terminal
 PS1="\[\e[1;38;2;50;130;224m\]❱❱\w\[\e[0m\]$ "
