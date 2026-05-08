@@ -103,10 +103,10 @@ alias claude="gtk-launch brave-fmpnliohjhemenmnlpbfagaolkdacoja-Profile_1.deskto
 
 # Running programs
 rst(){
-	rustc "$1" && ./"${1%.rs}"
+	rustc "$1" -o out && ./out && rm out
 }
 cpp(){
-	g++ "$1" && ./"${1%.cpp}"
+	g++ "$1" -o out && ./out && rm out
 }
 ptn(){
 	python3 "$1"
