@@ -42,7 +42,9 @@ export GTK_THEME="Graphite-blue-Dark:dark"
 # SHELL SETTINGS & PROMPT
 set -o vi  # Vim keybindings in terminal
 PS1="\[\e[1;38;2;50;130;224m\]❱❱\w\[\e[0m\]$ "
-fastfetch
+if [ -z "$NVIM" ]; then
+    fastfetch
+fi
 
 # CONDA INITIALIZATION (!! Contents within this block are managed by 'conda init' !!)
 __conda_setup="$("$HOME/anaconda3/bin/conda" 'shell.bash' 'hook' 2> /dev/null)"
@@ -58,6 +60,7 @@ fi
 unset __conda_setup
 
 # 4. ALIASES
+alias q="exit"
 alias sbshrc='source ~/.bashrc'
 alias inbshrc='tee -a ~/.bashrc'
 alias vbshrc='vim ~/.bashrc'
@@ -97,4 +100,15 @@ alias adt="$HOME/Downloads/mgltools_x86_64Linux2_1.5.7/bin/adt"
 alias whatsapp="gtk-launch brave-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop"
 alias gemini="gtk-launch brave-gdfaincndogidkdcdkhapmbffkckdkhn-Default.desktop"
 alias claude="gtk-launch brave-fmpnliohjhemenmnlpbfagaolkdacoja-Profile_1.desktop"
+
+# Running programs
+rst(){
+	rustc "$1" && ./"${1%.rs}"
+}
+cpp(){
+	g++ "$1" && ./"${1%.cpp}"
+}
+ptn(){
+	python3 "$1"
+}
 

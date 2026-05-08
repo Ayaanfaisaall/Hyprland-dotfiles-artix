@@ -1,16 +1,17 @@
 require "nvchad.mappings"
 
 -- add yours here
+vim.api.nvim_create_user_command('Hterm', function()
+  require("nvchad.term").toggle({ pos = "sp", id = "htoggleTerm" })
+end, {})
 
+-- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 local map = vim.keymap.set
-
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
-
 -- Normal mode mappings for navigation
-map("n", "fs", "gg", { desc = "Go to first line" })
+map("n", "fs", "gg0", { desc = "Go to first line" })
 map("n", "fe", "G", { desc = "Go to last line" })
 map("n", "end", "$", { desc = "Go to end of line" })
 map("n", "dt", "dd", { desc = "Delete line" })
