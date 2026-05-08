@@ -36,3 +36,9 @@ map("n", "cmt", "I# <Esc>", { desc = "Comment line" })
 map("n", "cmr", "^xx", { desc = "Uncomment line" })
 map("v", "cmt", ":s/^/# /<CR>", { desc = "Comment selection" })
 map("v", "cmr", "^xx", { desc = "Uncomment selection" })
+
+-- Normal Mode Window Navigation
+map("t", ",k", [[<C-\><C-n><C-w>k]], { desc = "Move to window above" })
+map("n", ",k", [[<C-\><C-n><C-w>k]], { desc = "Move to window above" })
+map("t", ",j", [[<C-\><C-n><C-w>j]], { desc = "Move to window below" })
+map("n", ",j", [[<C-\><C-n><C-w>j]], { desc = "Move to window below" })
