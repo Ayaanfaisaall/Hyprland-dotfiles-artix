@@ -51,6 +51,7 @@ Hyprland-dotfiles-artix/
 │   ├── hypr/
 │   ├── kitty/
 │   ├── nwg-dock-hyprland/
+│   ├── nvim/
 │   ├── gtk-4.0/
 │   ├── gtk-3.0/
 │   ├── rofi/
