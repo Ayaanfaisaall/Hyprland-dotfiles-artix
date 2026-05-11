@@ -5,6 +5,10 @@ vim.api.nvim_create_user_command('Hterm', function()
   require("nvchad.term").toggle({ pos = "sp", id = "htoggleTerm" })
 end, {})
 
+vim.api.nvim_create_user_command('Vterm', function()
+  require("nvchad.term").toggle({ pos = "vsp", id = "vtoggleTerm" })
+end, {})
+
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
@@ -38,6 +42,8 @@ map("v", "cmt", ":s/^/# /<CR>", { desc = "Comment selection" })
 map("v", "cmr", "^xx", { desc = "Uncomment selection" })
 
 -- Open Terminal
+map("n", ",ht", "<cmd> Hterm <CR>", { desc = "Horizontal terminal toggle" })
+map("n", ",vt", "<cmd> Vterm <CR>", { desc = "Vertical terminal toggle" })
 
 -- Terminal Normal Mode
 map("t", ",n", [[<C-\><C-n>]], {desc = "Terminal Normal Mode"})
@@ -47,4 +53,8 @@ map("t", ",k", [[<C-\><C-n><C-w>k]], { desc = "Move to window above" })
 map("n", ",k", [[<C-\><C-n><C-w>k]], { desc = "Move to window above" })
 map("t", ",j", [[<C-\><C-n><C-w>j]], { desc = "Move to window below" })
 map("n", ",j", [[<C-\><C-n><C-w>j]], { desc = "Move to window below" })
+map("t", ",h", [[<C-\><C-n><C-w>h]], { desc = "Move to window left" })
+map("n", ",h", [[<C-\><C-n><C-w>h]], { desc = "Move to window left" })
+map("t", ",l", [[<C-\><C-n><C-w>l]], { desc = "Move to window right" })
+map("n", ",l", [[<C-\><C-n><C-w>l]], { desc = "Move to window right" })
 

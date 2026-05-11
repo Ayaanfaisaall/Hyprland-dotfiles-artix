@@ -21,9 +21,9 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
 fi
 
 # System Default Programs
-export VISUAL='vim'
-export EDITOR='vim'
-export BROWSER='w3m'
+export VISUAL='nvim'
+export EDITOR='nvim'
+export BROWSER='brave-browser'
 
 # Terminal History Settings
 export HISTSIZE=1000000
