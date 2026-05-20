@@ -42,17 +42,19 @@ fi
 
 # 4. ALIASES
 alias q="exit"
+alias dc="cd .."
 alias sbshrc='source ~/.bashrc'
 alias inbshrc='tee -a ~/.bashrc'
 alias vbshrc='vim ~/.bashrc'
 alias nvbshrc='nvim ~/.bashrc'
-alias rfsh="clear && printf '\e[3J' && fastfetch"
+alias rfsh="clear && printf '\e[3J' && sbshrc"
 alias clear="clear && printf '\e[3J'"
 alias icat='kitty +kitten icat'
 alias lsimg='timg --grid=7 --title="%b" *.jpg *.png 2> /dev/null'
 alias wlcp='wl-copy'
 alias reboot='loginctl reboot'
 alias poweroff='loginctl poweroff'
+alias npxsrvr="npx live-server --no-browser --port=8080"
 
 # Dotfiles & Config Navigation 
 alias dots='cd ~/dotfiles'
