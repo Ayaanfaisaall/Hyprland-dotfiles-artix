@@ -52,6 +52,7 @@ alias clear="clear && printf '\e[3J'"
 alias icat='kitty +kitten icat'
 alias lsimg='timg --grid=7 --title="%b" *.jpg *.png 2> /dev/null'
 alias wlcp='wl-copy'
+alias nivm="nvim"
 alias reboot='loginctl reboot'
 alias poweroff='loginctl poweroff'
 alias npxsrvr="npx live-server --no-browser --port=8080"
