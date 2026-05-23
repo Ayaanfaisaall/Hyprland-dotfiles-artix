@@ -24,6 +24,7 @@
 ],
 
 "modules-right": [
+    "custom/control",
     "custom/sysinfo",
     "network",
     "bluetooth",
@@ -106,6 +107,12 @@
 
 
 // --- Modules Right ---
+"custom/control": {
+    "exec": "/home/ayaan/.config/waybar/scripts/control.sh",
+    "signal": 10,
+    "format": "{}"
+},
+
 "custom/sysinfo": {
     "exec": "/home/ayaan/.config/waybar/scripts/sysinfo.sh",
     "interval": 2,
