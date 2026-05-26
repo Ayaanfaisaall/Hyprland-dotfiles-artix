@@ -108,7 +108,7 @@
 
 // --- Modules Right ---
 "custom/control": {
-    "exec": "/home/ayaan/.config/waybar/scripts/control.sh",
+    "exec": "cat /tmp/kanata_state 2>/dev/null || echo ''",
     "signal": 10,
     "format": "{}"
 },
