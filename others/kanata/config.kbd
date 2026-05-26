@@ -1,0 +1,47 @@
+(defcfg
+  process-unmapped-keys yes
+  danger-enable-cmd yes
+)
+
+(defsrc
+  tab  q  w  e  r  t  y  u  i  o  p
+  caps a  s  d  f  g  h  j  k  l  ;
+  lsft z  x  c  v  b  n  m  ,  .  /
+  spc  rctl
+)
+
+(defalias
+  tb (tap-hold 300 300 tab lctl)
+  
+  spc  (tap-hold 200 200 spc (layer-while-held symbols))
+  lsh  (tap-hold 200 200 esc lsft)
+  
+  wb-ctrl (cmd sh -c "echo '[control]' > /tmp/kanata_state && pkill -RTMIN+10 waybar")
+  wb-main (cmd sh -c "echo '' > /tmp/kanata_state && pkill -RTMIN+10 waybar")
+
+  rtc-on  (multi @wb-ctrl (layer-switch control))
+  rtc-off (multi @wb-main (layer-switch main))
+
+  s-g (fork S-grv grv (lsft rsft))
+)
+
+(deflayer main
+  @tb  q  w  e  r  t  y  u  i  o  p
+  bspc a  s  d  f  g  h  j  k  l  ;
+  @lsh z  x  c  v  b  n  m  ,  .  /
+  @spc @rtc-on
+)
+
+(deflayer control
+  _    _  _  _  _  _  _    _    _    _    _
+  bspc _  _  _  _  _  left down up   rght _
+  _    _  _  _  _  _  _    _    _    _    _
+  _    @rtc-off
+)
+
+(deflayer symbols
+  _    1    2    3    4    5    6    7    8    9    0
+  del  lbrc rbrc S-lbrc S-rbrc @s-g bksl min  eql  S-eql S-1
+  _    _    S-2  S-3  S-4  _    S-8  S-7  _    _    _
+  _    _
+)
