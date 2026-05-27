@@ -76,6 +76,8 @@ yaypkgs=(
     "graphite-gtk-theme"
     "bluez-tools"
     "timg" 
+    "kanata-bin"
+    "nvchad"
 )
 
 # --- Installation Execution ---
