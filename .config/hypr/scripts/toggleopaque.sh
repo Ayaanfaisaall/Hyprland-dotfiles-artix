@@ -11,14 +11,16 @@ state_file="/tmp/opaque_$address"
 
 if [ -f "$state_file" ]; then
     rm "$state_file"
-    hyprctl dispatch setprop active opaque 0
+    # hyprctl dispatch "setprop" "active" "opaque" "0"
+    hyprctl dispatch 'hl.dsp.window.set_prop({ window = "active", prop = "opaque", value = 0 })'
     if [ $class == "kitty" ]; then
 	sed -i "s|0.8|1.0|g" ~/.config/kitty/kitty.conf
         killall -USR1 kitty
     fi
 else
     touch "$state_file"
-    hyprctl dispatch setprop active opaque 1
+    # hyprctl dispatch "setprop" "active" "opaque" "1"
+    hyprctl dispatch 'hl.dsp.window.set_prop({ window = "active", prop = "opaque", value = 1 })'
     if [ $class == "kitty" ]; then
 	sed -i "s|1.0|0.8|g" ~/.config/kitty/kitty.conf
         killall -USR1 kitty

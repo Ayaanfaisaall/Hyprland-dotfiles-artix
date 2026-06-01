@@ -70,7 +70,7 @@
         "": "Desktop",
         "alacritty": "Terminal",
         "kitty": "Terminal",
-	"brave-[a-z]{20,}.*": "Web App",
+        "brave-[a-z]{20,}.*": "Web App",
         "google-chrome": "Google Chrome"
     }
 },
