@@ -49,8 +49,10 @@
 
 "custom/minimize": {
     "format": "",
-    "on-click": "hyprctl dispatch movetoworkspacesilent special",
-    "on-click-right": "hyprctl dispatch togglespecialworkspace && hyprctl dispatch movetoworkspace e+0",
+    // "on-click": "hyprctl dispatch movetoworkspacesilent special",
+    "on-click": "hyprctl dispatch 'hl.dsp.window.move({ workspace = \"special:magic\", follow = false })'",
+    // "on-click-right": "hyprctl dispatch togglespecialworkspace && hyprctl dispatch movetoworkspace e+0",
+    "on-click-right": "hyprctl dispatch 'hl.dsp.workspace.toggle_special(\"magic\")' && hyprctl dispatch 'hl.dsp.window.move({ workspace = \"e+0\" })'",
     "tooltip": true,
     "tooltip-format": "Minimize"
 },

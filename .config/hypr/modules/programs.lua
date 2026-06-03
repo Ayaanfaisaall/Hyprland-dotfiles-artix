@@ -4,7 +4,7 @@
 
 local confirm = "~/.config/hypr/scripts/confirm.sh"
 local floating = "~/.config/hypr/scripts/floating.sh"
-local fullscreen = "hyprctl dispatch fullscreen 1"
+local fullscreen = "hyprctl dispatch 'hl.dsp.window.fullscreen({ mode = \"fullscreen\" })'"
 local minimize = "~/.config/hypr/scripts/minimize.sh"
 local opaque = "~/.config/hypr/scripts/toggleopaque.sh"
 

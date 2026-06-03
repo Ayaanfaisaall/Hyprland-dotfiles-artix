@@ -2,10 +2,10 @@
 
 case $1 in
 	amin)
-		hyprctl dispatch movetoworkspacesilent special
+    hyprctl dispatch 'hl.dsp.window.move({ workspace = "special:magic", follow = false })'
 		;;
 	bmin)
-		hyprctl dispatch togglespecialworkspace && hyprctl dispatch movetoworkspace e+0
+    hyprctl dispatch 'hl.dsp.workspace.toggle_special("magic)' && hyprctl dispatch 'hl.dsp.window.move({ workspace = "e+0" })'
 		;;
 esac
 

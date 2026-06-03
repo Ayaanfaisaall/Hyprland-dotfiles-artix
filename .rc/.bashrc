@@ -97,3 +97,4 @@ sanp(){
 	python3 "$1"
 }
 
+export PATH="$HOME/.cargo/bin:$PATH"

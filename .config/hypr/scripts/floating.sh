@@ -1,9 +1,9 @@
 #!/bin/bash
 
-hyprctl dispatch togglefloating
+hyprctl dispatch 'hl.dsp.window.float()'
 isfloating=$(hyprctl activewindow -j | jq '.floating')
 
 if [ "$isfloating" = "true" ]; then
-	hyprctl dispatch resizeactive exact 900 600
-	hyprctl dispatch centerwindow
+  hyprctl dispatch 'hl.dsp.window.resize({ x = 900, y = 600 })'
+  hyprctl dispatch 'hl.dsp.window.center()'
 fi
