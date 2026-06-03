@@ -1,2 +1,2 @@
-*.qml linguist-vendored
+*.qml linguist-detectable=false
 
