@@ -23,6 +23,8 @@ hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 
 -- Utilities
 hl.bind("PRINT", hl.dsp.exec_cmd(programs.scrnsht))
+hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd(programs.scrnrec))
+hl.bind("ALT + PRINT", hl.dsp.exec_cmd("pkill -SIGINT wf-recorder"))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(programs.clpbrd))
 hl.bind(mainMod .. " + ALT + V", hl.dsp.exec_cmd(programs.clrclpbrd))
 

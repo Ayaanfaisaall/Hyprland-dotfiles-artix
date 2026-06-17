@@ -20,6 +20,8 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
 
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # System Default Programs
 export VISUAL='nvim'
 export EDITOR='nvim'
@@ -42,7 +44,8 @@ fi
 
 # 4. ALIASES
 alias q="exit"
-alias dc="cd .."
+alias dk="cd"
+alias kd="cd .."
 alias sbshrc='source ~/.bashrc'
 alias inbshrc='tee -a ~/.bashrc'
 alias vbshrc='vim ~/.bashrc'
@@ -56,6 +59,7 @@ alias nivm="nvim"
 alias reboot='loginctl reboot'
 alias poweroff='loginctl poweroff'
 alias npxsrvr="npx live-server --no-browser --port=8080"
+alias esp=". $HOME/export-esp.sh"
 
 # Dotfiles & Config Navigation 
 alias dots='cd ~/dotfiles'
@@ -88,13 +92,11 @@ alias gemini="gtk-launch brave-gdfaincndogidkdcdkhapmbffkckdkhn-Default.desktop"
 
 # Running programs
 rst(){
-	rustc "$1" -o out && ./out && rm out
+	rustc "$1" -o out && ./out ; rm -f out
 }
 cpp(){
-	g++ "$1" -o out && ./out && rm out
+	g++ "$1" -o out && ./out ; rm -f out
 }
 sanp(){
-	python3 "$1"
+	python3 "$@"
 }
-
-export PATH="$HOME/.cargo/bin:$PATH"

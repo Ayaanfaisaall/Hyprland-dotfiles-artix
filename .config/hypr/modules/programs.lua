@@ -12,6 +12,7 @@ local opaque = "~/.config/hypr/scripts/toggleopaque.sh"
 local clpbrd = "cliphist list| rofi -dmenu -p Clipboard| cliphist decode| wl-copy"
 local clrclpbrd = "cliphist wipe && notify-send Clipboard Cleared"
 local scrnsht = [[grim -g "$(slurp)" - | tee ~/Pictures/Screenshots/Screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png | wl-copy -t image/png]]
+local scrnrec = [[wf-recorder -g "$(slurp)" -f ~/Videos/Screenrecord/Screenrecord_$(date +'%Y-%m-%d_%H-%M-%S').mp4]]
 
 --# UI & Layers
 local bluetooth = "~/dotfiles/.config/eww/scripts/bluetooth.sh"
@@ -43,6 +44,7 @@ return {
     clpbrd     = clpbrd,
     clrclpbrd  = clrclpbrd,
     scrnsht    = scrnsht,
+    scrnrec    = scrnrec,
     bluetooth  = bluetooth,
     ctrlcntr   = ctrlcntr,
     control    = control,
