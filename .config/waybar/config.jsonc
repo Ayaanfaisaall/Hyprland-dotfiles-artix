@@ -79,7 +79,9 @@
 
 "hyprland/workspaces": {
     "format": "{icon}",
-    "on-click": "hyprctl dispatch 'hl.dsp.focus({ workspace = 1 })'",
+    // "on-click": "hyprctl dispatch 'hl.dsp.focus({ workspace = 1 })'",
+    "on-click": "hyprctl dispatch 'hl.dsp.workspace.focus('\"'{}'\"')'",
+    // "on-click": "activate",
     "all-outputs": true,
     "format-icons": {
         "1": "1",

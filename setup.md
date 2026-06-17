@@ -73,7 +73,7 @@ cp ~/Hyprland-dotfiles-artix/others/icons/* ~/.local/share/icons/
 To install the font do:
 
 ```bash
-fc-cache-fv
+fc-cache -fv
 ```
 
 For the cursor the hyprland.conf is already configured.

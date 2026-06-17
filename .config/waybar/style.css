@@ -75,11 +75,11 @@ window#waybar {
 }
 
 /* Hover Effect */
-/* #workspaces button:hover { */
-/*     background: rgba(255, 255, 255, 0.1);  */
-/*     color: #ffffff; */
-/*     box-shadow: none; */
-/* } */
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.1); 
+    color: #ffffff;
+    box-shadow: none;
+}
 
 /* Active (Current) Workspace Slider */
 #workspaces button.active {
