@@ -4,10 +4,10 @@ If you want to apply plymouth theme put it in the right directory:
 ```bash
 sudo cp -r others/plymouth/themes/zaailtheme /usr/share/plymouth/themes
 sudo plymouthd-set-default-theme -R zaailtheme
-sudo vim /etc/mkinitcpio.conf			# add plymouth to hooks
-sudo mkinitcpio -P				# rebuild initramfs
-sudo vim /etc/default/grub			# add 'quiet splash' in 'GRUB_CMDLINE_LINUX_DEFAULT'
-sudo grub-mkconfig -o /boot/grub/grub.cfg	# update grub.cfg
+sudo vim /etc/mkinitcpio.conf			            # add plymouth to hooks
+sudo mkinitcpio -P				                    # rebuild initramfs
+sudo vim /etc/default/grub			              # add 'quiet splash' in 'GRUB_CMDLINE_LINUX_DEFAULT'
+sudo grub-mkconfig -o /boot/grub/grub.cfg	    # update grub.cfg
 ```
 
 Now plymouth theme has been applied, reboot the pc to see the changes.
