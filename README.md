@@ -73,7 +73,7 @@ Hyprland-dotfiles-artix/
 ---
 
 ## Component Overview
-* **hypr**: The core window manager configuration. It is split into logical modules (autostart.lua, bindings.lua, lookandfeel.lua, etc.) to keep the main hyprland.conf clean. Custom bash scripts handle specialized window behaviors like floating toggles and window minimization.
+* **hypr**: The core window manager configuration. It is split into logical modules (autostart.lua, bindings.lua, lookandfeel.lua, etc.) to keep the main hyprland.lua clean. Custom bash scripts handle specialized window behaviors like floating toggles and window minimization.
 * **eww**: Powers the custom control center widget. Contains .yuck layout files, .scss styling, and shell scripts to fetch and toggle system states (Wi-Fi, Bluetooth, Audio).
 * **waybar**: The main status bar at the top of the screen. It relies heavily on a custom directory of .svg icons to maintain a minimal, text-light appearance.
 * **rofi**: The application launcher. Configured with a config.rasi file to ensure the background blur and dark theme perfectly match the terminal and Eww widgets.
