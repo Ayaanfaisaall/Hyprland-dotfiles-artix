@@ -34,7 +34,7 @@ If you want to load the kanata configuration:
 cd others/kanata/
 sudo stow -t /etc/kanata/ .
 cd ..
-runitctl restart kanata     #ensure runitctl is installed
+runitctl restart kanata                     #ensure runitctl is installed
 ```
 
 The kanata config is now applied and can be tested.
