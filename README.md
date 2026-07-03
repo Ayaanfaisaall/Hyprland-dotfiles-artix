@@ -64,6 +64,7 @@ Hyprland-dotfiles-artix/
 ├── scripts/
 ├── dependencies.sh
 ├── installation.md
+├── setup.md
 ├── others/
 ├── LICENSE
 └── README.md

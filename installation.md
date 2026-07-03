@@ -2,7 +2,7 @@
 To install the setup first clone the repository and open it:
 
 ```Bash
-git clone https://github.com/Ayaanfaisaall/Hyprland-dotfiles-artix.git
+git clone https://github.com/ayaanfaisaall/Hyprland-dotfiles-artix.git
 cd Hyprland-dotfiles-artix
 ```
 

@@ -3,7 +3,7 @@
 case "$1" in
     --help|-h)
         echo "theme is written to change system wide theme for" 
-        echo "Hyprland-dotfiles-artix by Ayaanfaisaall"
+        echo "Hyprland-dotfiles-artix by ayaanfaisaall"
         echo "usage: theme <int>"
         echo ""
         echo "options:"

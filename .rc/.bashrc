@@ -60,6 +60,7 @@ alias reboot='loginctl reboot'
 alias poweroff='loginctl poweroff'
 alias npxsrvr="npx live-server --no-browser --port=8080"
 alias esp=". $HOME/export-esp.sh"
+alias krita="QT_QPA_PLATFORM=wayland krita"
 
 # Dotfiles & Config Navigation 
 alias dots='cd ~/dotfiles'
