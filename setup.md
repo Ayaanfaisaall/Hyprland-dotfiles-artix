@@ -14,7 +14,7 @@ Now plymouth theme has been applied, reboot the pc to see the changes.
 
 ---
 
-### Load keyd configuration
+### Load keyd/kanata configuration
 If you want to load the keyd configuration:
 
 ```bash
@@ -25,6 +25,19 @@ sudo keyd reload
 ```
 
 The keyd config is now applied and can be tested.
+
+## or
+
+If you want to load the kanata configuration:
+
+```bash
+cd others/kanata/
+sudo stow -t /etc/kanata/ .
+cd ..
+runitctl restart kanata     #ensure runitctl is installed
+```
+
+The kanata config is now applied and can be tested.
 
 ---
 
@@ -58,7 +71,11 @@ The hyprland lauches by start-hyprland by default, in order for whole environmen
 sudo vim /usr/share/wayland-session/hyprland.desktop
 ```
 
-Replace **start-hyprland** with **dbus-run-session /usr/bin/start-hyprland**.
+Replace **start-hyprland** with: 
+
+```bash
+dbus-run-session /usr/bin/start-hyprland
+```
 
 ---
 
