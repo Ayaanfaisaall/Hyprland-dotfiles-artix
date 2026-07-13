@@ -44,24 +44,19 @@
     "format": "",
     "on-click": "hyprctl dispatch 'hl.dsp.window.close()'",
     "tooltip": true
-    // "tooltip-format": "Close Window"
 },
 
 "custom/minimize": {
     "format": "",
-    // "on-click": "hyprctl dispatch movetoworkspacesilent special",
     "on-click": "hyprctl dispatch 'hl.dsp.window.move({ workspace = \"special:magic\", follow = false })'",
-    // "on-click-right": "hyprctl dispatch togglespecialworkspace && hyprctl dispatch movetoworkspace e+0",
     "on-click-right": "hyprctl dispatch 'hl.dsp.workspace.toggle_special(\"magic\")' && hyprctl dispatch 'hl.dsp.window.move({ workspace = \"e+0\" })'",
     "tooltip": true
-    // "tooltip-format": "Minimize"
 },
 
 "custom/maximize": {
     "format": "",
     "on-click": "hyprctl dispatch 'hl.dsp.window.fullscreen()'",
     "tooltip": true
-    // "tooltip-format": "Maximize"
 },
 
 "hyprland/window": {
@@ -79,9 +74,7 @@
 
 "hyprland/workspaces": {
     "format": "{icon}",
-    // "on-click": "hyprctl dispatch 'hl.dsp.focus({ workspace = 1 })'",
     "on-click": "hyprctl dispatch 'hl.dsp.workspace.focus('\"'{}'\"')'",
-    // "on-click": "activate",
     "all-outputs": true,
     "format-icons": {
         "1": "1",
@@ -112,7 +105,7 @@
 
 // --- Modules Right ---
 "custom/control": {
-    "exec": "cat /tmp/kanata_state 2>/dev/null || echo ''",
+    "exec": "cat /run/user/1000/kanata_state 2>/dev/null || echo ''",
     "signal": 10,
     "format": "{}"
 },
