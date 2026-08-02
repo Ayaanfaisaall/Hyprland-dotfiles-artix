@@ -25,7 +25,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # System Default Programs
 export VISUAL='nvim'
 export EDITOR='nvim'
-export BROWSER='brave-browser'
+export BROWSER='brave'
 
 # Terminal History Settings
 export HISTSIZE=1000000
@@ -44,8 +44,7 @@ fi
 
 # 4. ALIASES
 alias q="exit"
-alias dk="cd"
-alias kd="cd .."
+alias dc="cd .."
 alias sbshrc='source ~/.bashrc'
 alias inbshrc='tee -a ~/.bashrc'
 alias vbshrc='vim ~/.bashrc'
@@ -60,7 +59,9 @@ alias reboot='loginctl reboot'
 alias poweroff='loginctl poweroff'
 alias npxsrvr="npx live-server --no-browser --port=8080"
 alias esp=". $HOME/export-esp.sh"
-alias krita="QT_QPA_PLATFORM=wayland krita"
+alias dohayras="ollama serve"
+alias dracarys="ollama run llama3.1"
+alias lykiri="ollama stop llama3.1"
 
 # Dotfiles & Config Navigation 
 alias dots='cd ~/dotfiles'
@@ -90,6 +91,7 @@ alias gpsh='git push origin main'
 # Applications
 alias whatsapp="gtk-launch brave-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop"
 alias gemini="gtk-launch brave-gdfaincndogidkdcdkhapmbffkckdkhn-Default.desktop"
+alias krita="QT_QPA_PLATFORM=wayland krita"
 
 # Running programs
 rst(){
