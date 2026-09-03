@@ -44,7 +44,7 @@ fi
 
 # 4. ALIASES
 alias q="exit"
-alias dc="cd .."
+alias df="cd .."
 alias sbshrc='source ~/.bashrc'
 alias inbshrc='tee -a ~/.bashrc'
 alias vbshrc='vim ~/.bashrc'
@@ -102,4 +102,14 @@ cpp(){
 }
 sanp(){
 	python3 "$@"
+}
+fd(){
+  thing=$1
+  if test -d "$thing"; then
+    cd "$thing"
+  elif test -z "$thing"; then
+    cd "$HOME"   
+  else
+    nvim "$thing"
+  fi
 }
